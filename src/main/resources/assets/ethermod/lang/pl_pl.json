@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Podniebny hak",
   "trait.ethermod.gravitic.skyhook.desc": "Chybione strzały Liny kotwiczą się w powietrzu.",
   "trait.ethermod.gravitic.zipline": "Tyrolka",
-  "trait.ethermod.gravitic.zipline.desc": "Połącz dwie powierzchnie liną do zjeżdżania.",
+  "trait.ethermod.gravitic.zipline.desc": "Skradaj się, zaczepiając dwie powierzchnie, aby połączyć je liną. Wyceluj w nią i przytrzymaj prawy przycisk, aby nią zjechać.",
   "trait.ethermod.gravitic.gravity_skate": "Ślizg grawitacyjny",
   "trait.ethermod.gravitic.gravity_skate.desc": "Bieg przyspiesza do dwukrotności prędkości sprintu. Wymachy i wyrzuty przechodzą w bieg.",
   "trait.ethermod.gravitic.airwalk": "Chód w powietrzu",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Dodatkowe bloki roślinności",
   "ethermod.configuration.extra_crops": "Dodatkowe uprawy",
   "ethermod.configuration.title": "Ustawienia Manipulatora Eteru",
-  "subtitles.ethermod.stasis.ding": "Staza tyka"
+  "subtitles.ethermod.stasis.ding": "Staza tyka",
+  "command.ethermod.set": "Manipulator Eteru ustawiony dla graczy: %s",
+  "command.ethermod.build_code": "Build gracza %s: %s",
+  "command.ethermod.bad_module": "Nieznany moduł: %s",
+  "command.ethermod.bad_choice": "Wybory to A lub B, nie %s",
+  "command.ethermod.bad_code": "Nieprawidłowy kod buildu przy: %s",
+  "command.ethermod.bad_colour": "To nie jest kolor hex: %s"
 }

@@ -22,6 +22,8 @@ public final class BeamTrace {
      * the beam meets it), otherwise the block.
      */
     public static HitResult castWithEntities(Player player, double range, float pt) {
+        HitResult locked = locked(player, range, pt);
+        if (locked != null) return locked;
         BlockHitResult block = cast(player, range, pt);
         Vec3 eye = player.getEyePosition(pt);
         Vec3 dir = player.getViewVector(pt);
@@ -52,6 +54,38 @@ public final class BeamTrace {
             }
         }
         return best != null ? best : block;
+    }
+
+    /** Same cone as the server's Lock-On (BeamCastHelper). */
+    private static final double LOCK_COS = Math.cos(Math.toRadians(12));
+
+    /**
+     * Lock-On: the creature the server says the beam holds, while it stays inside the lock cone and
+     * in sight, hit at its centre. Null when there is no lock.
+     */
+    private static HitResult locked(Player player, double range, float pt) {
+        RemoteBeams.Pulse pulse = RemoteBeams.pulseOf(player.getId());
+        if (pulse == null || pulse.lock < 0) return null;
+        if (!(player.level().getEntity(pulse.lock)
+                        instanceof net.minecraft.world.entity.LivingEntity e)
+                || !e.isAlive()) return null;
+        Vec3 eye = player.getEyePosition(pt);
+        Vec3 centre =
+                e.getPosition(pt).add(0, e.getBbHeight() / 2, 0);
+        Vec3 to = centre.subtract(eye);
+        if (to.length() > range || to.normalize().dot(player.getViewVector(pt)) <= LOCK_COS)
+            return null;
+        var wall =
+                player.level()
+                        .clip(
+                                new ClipContext(
+                                        eye,
+                                        centre,
+                                        ClipContext.Block.VISUAL,
+                                        ClipContext.Fluid.NONE,
+                                        player));
+        if (wall.getType() != HitResult.Type.MISS) return null;
+        return new net.minecraft.world.phys.EntityHitResult(e, centre);
     }
 
     public static BlockHitResult cast(Player player, double range, float pt) {

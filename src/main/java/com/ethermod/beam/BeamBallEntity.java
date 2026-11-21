@@ -187,9 +187,16 @@ public class BeamBallEntity extends Projectile {
     // Constructors
     // =========================================================================
 
-    /** Never the shooter's own mount (or anyone riding with them): shots fired from the saddle go past it. */
+    /** Ticks after the shot during which it can't hit its own shooter (jumping into a fresh shot). */
+    static final int OWNER_GRACE = 10;
+
+    /**
+     * Never the shooter's own mount (or anyone riding with them): shots fired from the saddle go
+     * past it. Never the shooter either for the first {@link #OWNER_GRACE} ticks.
+     */
     @Override
     protected boolean canHitEntity(Entity e) {
+        if (e == getOwner() && tickCount < OWNER_GRACE) return false;
         return super.canHitEntity(e) && !com.ethermod.beam.Mounts.own(getOwner(), e)
                 && ((getMode() == OrbMode.TETHER ? com.ethermod.config.ServerConfig.tetherPlayers() : com.ethermod.config.ServerConfig.hurtPlayers())
                         || !(e instanceof net.minecraft.world.entity.player.Player) || e == getOwner());

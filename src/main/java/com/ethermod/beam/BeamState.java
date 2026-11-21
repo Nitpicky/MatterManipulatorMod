@@ -123,9 +123,13 @@ public final class BeamState {
     /** Last pressure level and strike told to clients (-1: nothing sent yet). */
     int sentLevel = -1;
 
+    /** The creature Lock-On holds, as last told to clients (-1: none). */
+    int sentLock = -1;
+
     /** A new beam: tell clients the pressure again. */
     public void resync() {
         sentLevel = -1;
+        sentLock = -1;
     }
 
     /** Ticks between strikes per pressure level: 2/s, ~3/s, 4/s, 5/s. */

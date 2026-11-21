@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Himmelskrok",
   "trait.ethermod.gravitic.skyhook.desc": "Linskott som missar förankras i luften.",
   "trait.ethermod.gravitic.zipline": "Linbana",
-  "trait.ethermod.gravitic.zipline.desc": "Koppla ihop två ytor med ett rep att åka på.",
+  "trait.ethermod.gravitic.zipline.desc": "Smyg medan du hakar fast två ytor för att länka dem med ett rep. Sikta på det och håll högerklick för att åka på det.",
   "trait.ethermod.gravitic.gravity_skate": "Gravitationsskridsko",
   "trait.ethermod.gravitic.gravity_skate.desc": "Löpning accelererar till dubbel sprintfart. Svingar och kast fortsätter in i löpningen.",
   "trait.ethermod.gravitic.airwalk": "Luftgång",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Extra växtlighetsblock",
   "ethermod.configuration.extra_crops": "Extra grödor",
   "ethermod.configuration.title": "Inställningar för Etermanipulator",
-  "subtitles.ethermod.stasis.ding": "Stas tickar"
+  "subtitles.ethermod.stasis.ding": "Stas tickar",
+  "command.ethermod.set": "Etermanipulator inställd för %s spelare",
+  "command.ethermod.build_code": "%ss build: %s",
+  "command.ethermod.bad_module": "Okänd modul: %s",
+  "command.ethermod.bad_choice": "Valen är A eller B, inte %s",
+  "command.ethermod.bad_code": "Ogiltig buildkod vid: %s",
+  "command.ethermod.bad_colour": "Inte en hexfärg: %s"
 }

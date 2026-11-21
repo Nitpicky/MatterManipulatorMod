@@ -166,7 +166,10 @@ public class BeamBallRenderer extends EntityRenderer<BeamBallEntity> {
             ps.translate(blockAt.x, blockAt.y, blockAt.z);
             ps.mulPose(com.mojang.math.Axis.YP.rotationDegrees(entity.getYRot()));
             ps.mulPose(com.mojang.math.Axis.XP.rotationDegrees(entity.getXRot()));
-            drawBlock(ps, buf, entity.getCarried(), Vec3.ZERO, time, 1.0f, light);
+            // Steady Hand: while the throw charges the block turns see-through, so the landing
+            // ghost and the spot behind it show
+            if (aimingThrow(entity)) drawGhostBlock(ps, buf, entity.getCarried(), THROW_ALPHA, light);
+            else drawBlock(ps, buf, entity.getCarried(), Vec3.ZERO, time, 1.0f, light);
             ps.popPose();
         }
     }
@@ -341,6 +344,101 @@ public class BeamBallRenderer extends EntityRenderer<BeamBallEntity> {
                         light,
                         net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY);
         ps.popPose();
+    }
+
+    /** How visible a held Mass Driver block stays while a Steady Hand throw charges. */
+    private static final float THROW_ALPHA = 0.35f;
+
+    /** A held Mass Driver block whose owner is charging a throw with Steady Hand. */
+    private static boolean aimingThrow(BeamBallEntity e) {
+        return e.isMassHeld()
+                && e.getOwner() instanceof net.minecraft.world.entity.player.Player p
+                && p.isUsingItem()
+                && com.ethermod.trait.Traits.has(p.getMainHandItem(), "tectonic.steady_hand");
+    }
+
+    /** The carried block, see-through ({@code alpha}), at the current pose. */
+    private static void drawGhostBlock(
+            PoseStack ps,
+            MultiBufferSource buf,
+            net.minecraft.world.level.block.state.BlockState state,
+            float alpha,
+            int light) {
+        if (state.getRenderShape() != net.minecraft.world.level.block.RenderShape.MODEL) {
+            drawBlock(ps, buf, state, Vec3.ZERO, 0, 1f, light);
+            return;
+        }
+        Minecraft mc = Minecraft.getInstance();
+        var model = mc.getBlockRenderer().getBlockModel(state);
+        int tint = mc.getBlockColors().getColor(state, null, null, 0);
+        float r = tint == -1 ? 1f : (tint >> 16 & 255) / 255f,
+                g = tint == -1 ? 1f : (tint >> 8 & 255) / 255f,
+                b = tint == -1 ? 1f : (tint & 255) / 255f;
+        VertexConsumer vc =
+                new FadedConsumer(
+                        buf.getBuffer(net.minecraft.client.renderer.Sheets.translucentCullBlockSheet()),
+                        alpha);
+        ps.pushPose();
+        ps.translate(-0.5, -0.5, -0.5);
+        for (var rt :
+                model.getRenderTypes(
+                        state,
+                        net.minecraft.util.RandomSource.create(42),
+                        net.neoforged.neoforge.client.model.data.ModelData.EMPTY))
+            mc.getBlockRenderer()
+                    .getModelRenderer()
+                    .renderModel(
+                            ps.last(),
+                            vc,
+                            state,
+                            model,
+                            r,
+                            g,
+                            b,
+                            light,
+                            net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY,
+                            net.neoforged.neoforge.client.model.data.ModelData.EMPTY,
+                            rt);
+        ps.popPose();
+    }
+
+    /** Passes vertices through with their alpha scaled. */
+    private record FadedConsumer(VertexConsumer to, float alpha) implements VertexConsumer {
+        @Override
+        public VertexConsumer addVertex(float x, float y, float z) {
+            to.addVertex(x, y, z);
+            return this;
+        }
+
+        @Override
+        public VertexConsumer setColor(int r, int g, int b, int a) {
+            to.setColor(r, g, b, Math.round(a * alpha));
+            return this;
+        }
+
+        @Override
+        public VertexConsumer setUv(float u, float v) {
+            to.setUv(u, v);
+            return this;
+        }
+
+        @Override
+        public VertexConsumer setUv1(int u, int v) {
+            to.setUv1(u, v);
+            return this;
+        }
+
+        @Override
+        public VertexConsumer setUv2(int u, int v) {
+            to.setUv2(u, v);
+            return this;
+        }
+
+        @Override
+        public VertexConsumer setNormal(float x, float y, float z) {
+            to.setNormal(x, y, z);
+            return this;
+        }
     }
 
     /** Zipline: the rope between two anchor hooks (drawn once, by the lower id). */

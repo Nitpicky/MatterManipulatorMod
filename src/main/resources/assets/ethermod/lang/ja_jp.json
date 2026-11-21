@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "スカイフック",
   "trait.ethermod.gravitic.skyhook.desc": "外れたテザーのショットが空中に固定される。",
   "trait.ethermod.gravitic.zipline": "ジップライン",
-  "trait.ethermod.gravitic.zipline.desc": "2つの面を乗れるロープでつなぐ。",
+  "trait.ethermod.gravitic.zipline.desc": "スニークしながら2つの面にフックを掛けるとロープでつながる。ロープに狙いを定めて右クリック長押しで滑走する。",
   "trait.ethermod.gravitic.gravity_skate": "グラビティスケート",
   "trait.ethermod.gravitic.gravity_skate.desc": "走るとダッシュ速度の2倍まで加速する。スイングや飛び出しの勢いがそのまま走りにつながる。",
   "trait.ethermod.gravitic.airwalk": "エアウォーク",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "追加の草木ブロック",
   "ethermod.configuration.extra_crops": "追加の作物",
   "ethermod.configuration.title": "エーテルマニピュレーターの設定",
-  "subtitles.ethermod.stasis.ding": "ステイシス：チクタク"
+  "subtitles.ethermod.stasis.ding": "ステイシス：チクタク",
+  "command.ethermod.set": "%s 人のプレイヤーのエーテルマニピュレーターを設定しました",
+  "command.ethermod.build_code": "%s のビルド：%s",
+  "command.ethermod.bad_module": "不明なモジュール：%s",
+  "command.ethermod.bad_choice": "選択肢は A か B です（%s ではありません）",
+  "command.ethermod.bad_code": "無効なビルドコード：%s",
+  "command.ethermod.bad_colour": "16進数の色ではありません：%s"
 }

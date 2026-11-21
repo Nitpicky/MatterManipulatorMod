@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Небесний гак",
   "trait.ethermod.gravitic.skyhook.desc": "Постріли Троса, що схибили, закріплюються в повітрі.",
   "trait.ethermod.gravitic.zipline": "Тарзанка",
-  "trait.ethermod.gravitic.zipline.desc": "Зв'яжіть дві поверхні канатом, яким можна їхати.",
+  "trait.ethermod.gravitic.zipline.desc": "Крадьтеся, чіпляючи дві поверхні, щоб з'єднати їх тросом. Наведіться на нього й утримуйте ПКМ, щоб ковзати.",
   "trait.ethermod.gravitic.gravity_skate": "Гравітаційна ковзанка",
   "trait.ethermod.gravitic.gravity_skate.desc": "Біг розганяється до подвійної швидкості спринту. Розгойдування й кидки переходять у біг.",
   "trait.ethermod.gravitic.airwalk": "Крок у повітрі",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Додаткові блоки рослинності",
   "ethermod.configuration.extra_crops": "Додаткові культури",
   "ethermod.configuration.title": "Налаштування маніпулятора ефіру",
-  "subtitles.ethermod.stasis.ding": "Стазис цокає"
+  "subtitles.ethermod.stasis.ding": "Стазис цокає",
+  "command.ethermod.set": "Маніпулятор ефіру налаштовано для гравців: %s",
+  "command.ethermod.build_code": "Збірка %s: %s",
+  "command.ethermod.bad_module": "Невідомий модуль: %s",
+  "command.ethermod.bad_choice": "Варіанти: A або B, а не %s",
+  "command.ethermod.bad_code": "Невірний код збірки: %s",
+  "command.ethermod.bad_colour": "Не hex-колір: %s"
 }

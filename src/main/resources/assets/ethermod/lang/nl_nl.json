@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Hemelhaak",
   "trait.ethermod.gravitic.skyhook.desc": "Lijnschoten die missen, verankeren zich in de lucht.",
   "trait.ethermod.gravitic.zipline": "Tokkelbaan",
-  "trait.ethermod.gravitic.zipline.desc": "Verbind twee oppervlakken met een touw om over te glijden.",
+  "trait.ethermod.gravitic.zipline.desc": "Sluip terwijl je twee oppervlakken vasthaakt om ze met een touw te verbinden. Richt erop en houd rechtsklik ingedrukt om erover te glijden.",
   "trait.ethermod.gravitic.gravity_skate": "Zwaartekrachtschaats",
   "trait.ethermod.gravitic.gravity_skate.desc": "Rennen versnelt tot twee keer de sprintsnelheid. Zwaaien en slingeren lopen door in de ren.",
   "trait.ethermod.gravitic.airwalk": "Luchtpad",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Extra begroeiingsblokken",
   "ethermod.configuration.extra_crops": "Extra gewassen",
   "ethermod.configuration.title": "Ethermanipulator-instellingen",
-  "subtitles.ethermod.stasis.ding": "Stasis tikt"
+  "subtitles.ethermod.stasis.ding": "Stasis tikt",
+  "command.ethermod.set": "Ethermanipulator ingesteld voor %s speler(s)",
+  "command.ethermod.build_code": "Build van %s: %s",
+  "command.ethermod.bad_module": "Onbekende module: %s",
+  "command.ethermod.bad_choice": "Keuzes zijn A of B, niet %s",
+  "command.ethermod.bad_code": "Geen geldige buildcode bij: %s",
+  "command.ethermod.bad_colour": "Geen hexkleur: %s"
 }

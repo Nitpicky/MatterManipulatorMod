@@ -18,7 +18,11 @@ public final class RemoteBeams {
 
     public static void set(int entityId, boolean active) {
         if (active) ACTIVE.putIfAbsent(entityId, clientTime);
-        else ACTIVE.remove(entityId);
+        else {
+            ACTIVE.remove(entityId);
+            Pulse s = PULSES.get(entityId);
+            if (s != null) s.lock = -1;
+        }
     }
 
     public static Map<Integer, Long> active() {
@@ -42,6 +46,8 @@ public final class RemoteBeams {
         public List<Integer> arcs = List.of();
         /** Arc bolts get a fresh random shape every strike. */
         public int seed;
+        /** The creature Lock-On holds the beam on, or -1. */
+        public int lock = -1;
     }
 
     private static final Map<Integer, Pulse> PULSES = new HashMap<>();
@@ -49,6 +55,7 @@ public final class RemoteBeams {
     public static void pulse(com.ethermod.network.payload.BeamPulsePayload p) {
         Pulse s = PULSES.computeIfAbsent(p.entityId(), k -> new Pulse());
         s.level = Math.max(1, p.level());
+        s.lock = p.lock();
         if (p.strike()) {
             s.strikeAt = clientTime;
             s.arcs = p.arcs();

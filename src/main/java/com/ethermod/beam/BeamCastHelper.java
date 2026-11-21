@@ -56,12 +56,23 @@ public final class BeamCastHelper {
      */
     private static void sync(
             ServerPlayer player, BeamState state, int level, boolean strike, List<Integer> arcs) {
-        if (!strike && level == state.sentLevel) return;
+        sync(player, state, level, strike, arcs, -1);
+    }
+
+    private static void sync(
+            ServerPlayer player,
+            BeamState state,
+            int level,
+            boolean strike,
+            List<Integer> arcs,
+            int lock) {
+        if (!strike && level == state.sentLevel && lock == state.sentLock) return;
         state.sentLevel = level;
+        state.sentLock = lock;
         net.neoforged.neoforge.network.PacketDistributor.sendToPlayersTrackingEntityAndSelf(
                 player,
                 new com.ethermod.network.payload.BeamPulsePayload(
-                        player.getId(), level, strike, arcs));
+                        player.getId(), level, strike, arcs, lock));
     }
 
     /** The beam's own damage type: no knockback (tagged), credited to the player. */
@@ -163,8 +174,11 @@ public final class BeamCastHelper {
             int combatLevel = state.trackTarget(target.getId(), interval, tool, level);
             player.getPersistentData().putInt("mm_beam_level", combatLevel);
             com.ethermod.util.MobMemory.of(target).putInt("mm_combat_pressure", combatLevel);
+            // Lock-On: from pressure 2 the beam holds this creature; clients bend the beam onto it
+            int lock =
+                    Traits.has(tool, "plasmic.lock_on") && combatLevel >= 2 ? target.getId() : -1;
             if (!strike) {
-                sync(player, state, combatLevel, false, List.of());
+                sync(player, state, combatLevel, false, List.of(), lock);
                 return targetPoint;
             }
             state.hitCooldown = BeamState.hitInterval(combatLevel);
@@ -207,7 +221,7 @@ public final class BeamCastHelper {
                                     arcs.add(e.getId());
                                 });
             }
-            sync(player, state, combatLevel, true, arcs);
+            sync(player, state, combatLevel, true, arcs, lock);
             return targetPoint;
         }
         boolean mining = hitPos.distanceTo(eye) < range - 0.1;

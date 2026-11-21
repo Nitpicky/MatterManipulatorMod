@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Himmelshaken",
   "trait.ethermod.gravitic.skyhook.desc": "Halteseil-Schüsse, die verfehlen, verankern sich in der Luft.",
   "trait.ethermod.gravitic.zipline": "Seilrutsche",
-  "trait.ethermod.gravitic.zipline.desc": "Verbinde zwei Flächen mit einem Seil zum Rutschen.",
+  "trait.ethermod.gravitic.zipline.desc": "Schleiche beim Einhaken zweier Flächen, um sie mit einem Seil zu verbinden. Ziele darauf und halte Rechtsklick, um daran zu fahren.",
   "trait.ethermod.gravitic.gravity_skate": "Schwerkraftgleiten",
   "trait.ethermod.gravitic.gravity_skate.desc": "Laufen beschleunigt bis zum doppelten Sprinttempo. Schwünge und Würfe gehen in den Lauf über.",
   "trait.ethermod.gravitic.airwalk": "Luftgang",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Zusätzliche Pflanzenblöcke",
   "ethermod.configuration.extra_crops": "Zusätzliche Feldfrüchte",
   "ethermod.configuration.title": "Äthermanipulator-Einstellungen",
-  "subtitles.ethermod.stasis.ding": "Stase tickt"
+  "subtitles.ethermod.stasis.ding": "Stase tickt",
+  "command.ethermod.set": "Äthermanipulator für %s Spieler eingestellt",
+  "command.ethermod.build_code": "Build von %s: %s",
+  "command.ethermod.bad_module": "Unbekanntes Modul: %s",
+  "command.ethermod.bad_choice": "Auswahl ist A oder B, nicht %s",
+  "command.ethermod.bad_code": "Kein gültiger Build-Code bei: %s",
+  "command.ethermod.bad_colour": "Keine Hex-Farbe: %s"
 }

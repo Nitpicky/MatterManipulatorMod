@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Небесный крюк",
   "trait.ethermod.gravitic.skyhook.desc": "Промахнувшиеся выстрелы Троса закрепляются в воздухе.",
   "trait.ethermod.gravitic.zipline": "Тарзанка",
-  "trait.ethermod.gravitic.zipline.desc": "Свяжите две поверхности канатом, по которому можно ехать.",
+  "trait.ethermod.gravitic.zipline.desc": "Крадитесь, цепляя две поверхности, чтобы связать их тросом. Наведитесь на него и удерживайте ПКМ, чтобы скользить.",
   "trait.ethermod.gravitic.gravity_skate": "Гравитационный конёк",
   "trait.ethermod.gravitic.gravity_skate.desc": "Бег разгоняется до двойной скорости спринта. Раскачивания и броски переходят в бег.",
   "trait.ethermod.gravitic.airwalk": "Шаг по воздуху",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Доп. блоки растительности",
   "ethermod.configuration.extra_crops": "Доп. культуры",
   "ethermod.configuration.title": "Настройки манипулятора эфира",
-  "subtitles.ethermod.stasis.ding": "Стазис тикает"
+  "subtitles.ethermod.stasis.ding": "Стазис тикает",
+  "command.ethermod.set": "Манипулятор эфира настроен для игроков: %s",
+  "command.ethermod.build_code": "Сборка %s: %s",
+  "command.ethermod.bad_module": "Неизвестный модуль: %s",
+  "command.ethermod.bad_choice": "Варианты: A или B, а не %s",
+  "command.ethermod.bad_code": "Неверный код сборки: %s",
+  "command.ethermod.bad_colour": "Не hex-цвет: %s"
 }

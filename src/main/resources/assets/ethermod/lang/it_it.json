@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Gancio celeste",
   "trait.ethermod.gravitic.skyhook.desc": "I colpi di Cavo che mancano si ancorano nell'aria.",
   "trait.ethermod.gravitic.zipline": "Teleferica",
-  "trait.ethermod.gravitic.zipline.desc": "Collega due superfici con una fune su cui scivolare.",
+  "trait.ethermod.gravitic.zipline.desc": "Accovacciati mentre agganci due superfici per collegarle con una corda. Mirala e tieni premuto il tasto destro per percorrerla.",
   "trait.ethermod.gravitic.gravity_skate": "Pattino gravitazionale",
   "trait.ethermod.gravitic.gravity_skate.desc": "Correre accelera fino al doppio della velocità di scatto. Oscillazioni e lanci proseguono nella corsa.",
   "trait.ethermod.gravitic.airwalk": "Passo aereo",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Blocchi di vegetazione extra",
   "ethermod.configuration.extra_crops": "Colture extra",
   "ethermod.configuration.title": "Impostazioni del Manipolatore d'Etere",
-  "subtitles.ethermod.stasis.ding": "Stasi: tic-tac"
+  "subtitles.ethermod.stasis.ding": "Stasi: tic-tac",
+  "command.ethermod.set": "Manipolatore d'Etere impostato per %s giocatore/i",
+  "command.ethermod.build_code": "Build di %s: %s",
+  "command.ethermod.bad_module": "Modulo sconosciuto: %s",
+  "command.ethermod.bad_choice": "Le scelte sono A o B, non %s",
+  "command.ethermod.bad_code": "Codice build non valido in: %s",
+  "command.ethermod.bad_colour": "Colore esadecimale non valido: %s"
 }

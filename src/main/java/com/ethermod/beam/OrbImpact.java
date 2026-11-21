@@ -243,7 +243,7 @@ final class OrbImpact {
         // Bank Shot (and the Light orb's own bounces)
         if (b.bouncesLeft > 0) {
             b.bouncesLeft--;
-            if (b.getMode() == OrbMode.LIGHT) b.traveledDistance = 0f;
+            b.traveledDistance = 0f; // each ricochet gets the full range again
             if (b.getMode() == OrbMode.LIGHT && sl.getBlockState(front).isAir() && b.mayBuild(front)) {
                 TempLights.tempLight(sl, front, 13, BeamBallEntity.BOUNCE_LIGHT_TICKS);
                 sl.sendParticles(

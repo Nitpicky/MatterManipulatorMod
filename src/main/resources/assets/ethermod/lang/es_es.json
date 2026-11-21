@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Gancho celeste",
   "trait.ethermod.gravitic.skyhook.desc": "Los disparos de Amarre que fallan se anclan en el aire.",
   "trait.ethermod.gravitic.zipline": "Tirolina",
-  "trait.ethermod.gravitic.zipline.desc": "Une dos superficies con una cuerda por la que deslizarte.",
+  "trait.ethermod.gravitic.zipline.desc": "Agáchate al enganchar dos superficies para unirlas con una cuerda. Apunta a ella y mantén el clic derecho para deslizarte.",
   "trait.ethermod.gravitic.gravity_skate": "Patín gravitatorio",
   "trait.ethermod.gravitic.gravity_skate.desc": "Correr acelera hasta el doble de la velocidad de esprint. Balanceos y lanzamientos se suman a la carrera.",
   "trait.ethermod.gravitic.airwalk": "Paso aéreo",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Bloques de vegetación extra",
   "ethermod.configuration.extra_crops": "Cultivos extra",
   "ethermod.configuration.title": "Ajustes del Manipulador de Éter",
-  "subtitles.ethermod.stasis.ding": "Estasis: tictac"
+  "subtitles.ethermod.stasis.ding": "Estasis: tictac",
+  "command.ethermod.set": "Manipulador de Éter configurado para %s jugador(es)",
+  "command.ethermod.build_code": "Build de %s: %s",
+  "command.ethermod.bad_module": "Módulo desconocido: %s",
+  "command.ethermod.bad_choice": "Las opciones son A o B, no %s",
+  "command.ethermod.bad_code": "Código de build no válido en: %s",
+  "command.ethermod.bad_colour": "Color hexadecimal no válido: %s"
 }

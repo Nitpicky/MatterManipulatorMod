@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Crochet céleste",
   "trait.ethermod.gravitic.skyhook.desc": "Les tirs d'Attache manqués s'ancrent dans le vide.",
   "trait.ethermod.gravitic.zipline": "Tyrolienne",
-  "trait.ethermod.gravitic.zipline.desc": "Reliez deux surfaces par une corde sur laquelle glisser.",
+  "trait.ethermod.gravitic.zipline.desc": "Accroupis-toi en accrochant deux surfaces pour les relier par une corde. Vise-la et maintiens le clic droit pour la parcourir.",
   "trait.ethermod.gravitic.gravity_skate": "Glisse gravitationnelle",
   "trait.ethermod.gravitic.gravity_skate.desc": "Courir accélère jusqu'à deux fois la vitesse de sprint. Balancements et propulsions se prolongent dans la course.",
   "trait.ethermod.gravitic.airwalk": "Marche aérienne",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Blocs de végétation en plus",
   "ethermod.configuration.extra_crops": "Cultures en plus",
   "ethermod.configuration.title": "Paramètres du Manipulateur d'Éther",
-  "subtitles.ethermod.stasis.ding": "Stase : tic-tac"
+  "subtitles.ethermod.stasis.ding": "Stase : tic-tac",
+  "command.ethermod.set": "Manipulateur d'Éther réglé pour %s joueur(s)",
+  "command.ethermod.build_code": "Build de %s : %s",
+  "command.ethermod.bad_module": "Module inconnu : %s",
+  "command.ethermod.bad_choice": "Les choix sont A ou B, pas %s",
+  "command.ethermod.bad_code": "Code de build invalide à : %s",
+  "command.ethermod.bad_colour": "Couleur hexadécimale invalide : %s"
 }

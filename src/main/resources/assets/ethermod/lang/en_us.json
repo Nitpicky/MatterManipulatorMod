@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Skyhook",
   "trait.ethermod.gravitic.skyhook.desc": "Tether shots that miss anchor in empty air.",
   "trait.ethermod.gravitic.zipline": "Zipline",
-  "trait.ethermod.gravitic.zipline.desc": "Link two surfaces with a rope you can ride.",
+  "trait.ethermod.gravitic.zipline.desc": "Sneak while hooking two surfaces to link them with a rope. Aim at it and hold right click to ride it.",
   "trait.ethermod.gravitic.gravity_skate": "Gravity Skate",
   "trait.ethermod.gravitic.gravity_skate.desc": "Running builds to twice sprint speed. Swings and flings carry into the run.",
   "trait.ethermod.gravitic.airwalk": "Airwalk",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Extra foliage blocks",
   "ethermod.configuration.extra_crops": "Extra crops",
   "ethermod.configuration.title": "Ether Manipulator settings",
-  "subtitles.ethermod.stasis.ding": "Stasis ticks"
+  "subtitles.ethermod.stasis.ding": "Stasis ticks",
+  "command.ethermod.set": "Ether Manipulator set for %s player(s)",
+  "command.ethermod.build_code": "%s's build: %s",
+  "command.ethermod.bad_module": "Unknown Module: %s",
+  "command.ethermod.bad_choice": "Choices are A or B, not %s",
+  "command.ethermod.bad_code": "Not a build code at: %s",
+  "command.ethermod.bad_colour": "Not a hex colour: %s"
 }

@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Gök Kancası",
   "trait.ethermod.gravitic.skyhook.desc": "Iskalayan Halat atışları havaya tutunur.",
   "trait.ethermod.gravitic.zipline": "Zipline",
-  "trait.ethermod.gravitic.zipline.desc": "İki yüzeyi binilebilir bir halatla bağla.",
+  "trait.ethermod.gravitic.zipline.desc": "İki yüzeyi kancalarken eğilerek onları bir iple bağla. Ona nişan al ve kaymak için sağ tıkı basılı tut.",
   "trait.ethermod.gravitic.gravity_skate": "Yerçekimi Kayağı",
   "trait.ethermod.gravitic.gravity_skate.desc": "Koşu, koşma hızının iki katına kadar ivmelenir. Salınımlar ve atılmalar koşuya dönüşür.",
   "trait.ethermod.gravitic.airwalk": "Havada Yürüyüş",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Ek bitki örtüsü blokları",
   "ethermod.configuration.extra_crops": "Ek ekinler",
   "ethermod.configuration.title": "Eter Manipülatörü ayarları",
-  "subtitles.ethermod.stasis.ding": "Durağanlık tıkırdıyor"
+  "subtitles.ethermod.stasis.ding": "Durağanlık tıkırdıyor",
+  "command.ethermod.set": "Eter Manipülatörü %s oyuncu için ayarlandı",
+  "command.ethermod.build_code": "%s adlı oyuncunun buildi: %s",
+  "command.ethermod.bad_module": "Bilinmeyen modül: %s",
+  "command.ethermod.bad_choice": "Seçimler A veya B, %s değil",
+  "command.ethermod.bad_code": "Geçersiz build kodu: %s",
+  "command.ethermod.bad_colour": "Geçersiz hex renk: %s"
 }

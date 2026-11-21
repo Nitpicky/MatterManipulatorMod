@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "天钩",
   "trait.ethermod.gravitic.skyhook.desc": "未命中的系索射击会固定在空中。",
   "trait.ethermod.gravitic.zipline": "滑索",
-  "trait.ethermod.gravitic.zipline.desc": "用可乘坐的绳索连接两个表面。",
+  "trait.ethermod.gravitic.zipline.desc": "潜行时钩住两个表面，用绳索将其相连。瞄准绳索并按住右键即可滑行。",
   "trait.ethermod.gravitic.gravity_skate": "重力滑行",
   "trait.ethermod.gravitic.gravity_skate.desc": "奔跑可加速至两倍疾跑速度。摆荡和弹射的势能可延续为奔跑。",
   "trait.ethermod.gravitic.airwalk": "踏空",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "额外植被方块",
   "ethermod.configuration.extra_crops": "额外作物",
   "ethermod.configuration.title": "以太操纵器设置",
-  "subtitles.ethermod.stasis.ding": "静滞：滴答"
+  "subtitles.ethermod.stasis.ding": "静滞：滴答",
+  "command.ethermod.set": "已为 %s 名玩家设置以太操纵器",
+  "command.ethermod.build_code": "%s 的配置：%s",
+  "command.ethermod.bad_module": "未知模块：%s",
+  "command.ethermod.bad_choice": "选项为 A 或 B，而不是 %s",
+  "command.ethermod.bad_code": "无效的配置代码：%s",
+  "command.ethermod.bad_colour": "不是十六进制颜色：%s"
 }

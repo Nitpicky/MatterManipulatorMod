@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "스카이훅",
   "trait.ethermod.gravitic.skyhook.desc": "빗나간 밧줄 사격이 공중에 고정됩니다.",
   "trait.ethermod.gravitic.zipline": "집라인",
-  "trait.ethermod.gravitic.zipline.desc": "두 면을 탈 수 있는 줄로 잇습니다.",
+  "trait.ethermod.gravitic.zipline.desc": "웅크린 채 두 표면에 갈고리를 걸면 밧줄로 연결된다. 밧줄을 조준하고 우클릭을 누르고 있으면 타고 이동한다.",
   "trait.ethermod.gravitic.gravity_skate": "중력 스케이트",
   "trait.ethermod.gravitic.gravity_skate.desc": "달리면 질주 속도의 두 배까지 가속합니다. 그네 타기와 발사의 탄력이 달리기로 이어집니다.",
   "trait.ethermod.gravitic.airwalk": "공중 걷기",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "추가 초목 블록",
   "ethermod.configuration.extra_crops": "추가 작물",
   "ethermod.configuration.title": "에테르 매니퓰레이터 설정",
-  "subtitles.ethermod.stasis.ding": "정지장: 똑딱"
+  "subtitles.ethermod.stasis.ding": "정지장: 똑딱",
+  "command.ethermod.set": "플레이어 %s명의 에테르 매니퓰레이터를 설정했습니다",
+  "command.ethermod.build_code": "%s의 빌드: %s",
+  "command.ethermod.bad_module": "알 수 없는 모듈: %s",
+  "command.ethermod.bad_choice": "선택은 A 또는 B입니다 (%s 아님)",
+  "command.ethermod.bad_code": "잘못된 빌드 코드: %s",
+  "command.ethermod.bad_colour": "16진수 색상이 아닙니다: %s"
 }

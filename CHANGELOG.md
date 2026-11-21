@@ -3,6 +3,23 @@
 Versions are MAJOR.FEATURE.PATCH. A version that isn't marked as a release rolls into the
 next release's notes.
 
+## 1.0.2
+
+### Changes
+- Mods list: new mod icon.
+- Commands: `/ethermod set_module`, `set_build`, `export_build` (shareable build codes like `1GABA2HAAA`) and `set_color`.
+
+### Fixes
+- Lock-On: the beam now visibly stays on the locked creature.
+- Growth: no longer bone-meals grass, ferns and tall flowers (it broke them and spilled items).
+- Shots: jumping as you fire no longer catches your own shot (Water stopped the jump, Frost lost its bridge).
+
+### Tuning
+- Gravity Shift: no fall damage while gravity is shifted.
+- Zipline: description says how to string (sneak) and ride (hold right click) a rope.
+- Bank Shot: each ricochet resets the shot's range.
+- Steady Hand: held blocks turn see-through while a throw charges.
+
 ## 1.0.1 (release)
 
 ### Changes

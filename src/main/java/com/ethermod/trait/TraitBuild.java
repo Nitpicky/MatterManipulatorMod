@@ -97,6 +97,43 @@ public final class TraitBuild {
                 });
     }
 
+    /** The stored line of a slot whether or not the stage opens it yet (commands, build codes). */
+    @Nullable
+    public static ResourceLocation storedLine(ItemStack stack, int slot) {
+        ListTag list = slotsTag(stack);
+        if (slot < 0 || slot >= list.size()) return null;
+        String s = list.getCompound(slot).getString("line");
+        return s.isEmpty() ? null : ResourceLocation.tryParse(s);
+    }
+
+    /** The stored picks of a slot (3 entries, "" where none), whether or not their tiers are open. */
+    public static String[] storedPicks(ItemStack stack, int slot) {
+        String[] out = {"", "", ""};
+        ListTag list = slotsTag(stack);
+        if (slot < 0 || slot >= list.size()) return out;
+        ListTag picks = list.getCompound(slot).getList("picks", Tag.TAG_STRING);
+        for (int i = 0; i < Math.min(3, picks.size()); i++) out[i] = picks.getString(i);
+        return out;
+    }
+
+    /**
+     * Writes a slot as given, ignoring stage gating: a slot or tier the stage doesn't open yet keeps
+     * its choice and turns on once the Manipulator is upgraded.
+     */
+    public static void setStored(ItemStack stack, int slot, @Nullable ResourceLocation lineId, String[] picks) {
+        edit(
+                stack,
+                list -> {
+                    CompoundTag s = new CompoundTag();
+                    s.putString("line", lineId == null ? "" : lineId.toString());
+                    ListTag p = new ListTag();
+                    for (int i = 0; i < 3; i++)
+                        p.add(net.minecraft.nbt.StringTag.valueOf(lineId == null || i >= picks.length ? "" : picks[i]));
+                    s.put("picks", p);
+                    list.set(slot, s);
+                });
+    }
+
     private static void edit(ItemStack stack, java.util.function.Consumer<ListTag> f) {
         CompoundTag root =
                 stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();

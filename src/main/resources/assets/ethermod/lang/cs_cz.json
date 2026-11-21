@@ -304,7 +304,7 @@
   "trait.ethermod.gravitic.skyhook": "Nebeský hák",
   "trait.ethermod.gravitic.skyhook.desc": "Výstřely Lana, které minou, se ukotví ve vzduchu.",
   "trait.ethermod.gravitic.zipline": "Lanovka",
-  "trait.ethermod.gravitic.zipline.desc": "Spoj dvě plochy lanem, po kterém se dá jezdit.",
+  "trait.ethermod.gravitic.zipline.desc": "Plíž se při zaháknutí dvou povrchů a spoj je lanem. Zamiř na něj a podrž pravé tlačítko pro jízdu.",
   "trait.ethermod.gravitic.gravity_skate": "Gravitační brusle",
   "trait.ethermod.gravitic.gravity_skate.desc": "Běh zrychluje až na dvojnásobek rychlosti sprintu. Švihy a vrhy přecházejí do běhu.",
   "trait.ethermod.gravitic.airwalk": "Chůze vzduchem",
@@ -392,5 +392,11 @@
   "ethermod.configuration.extra_foliage": "Další bloky vegetace",
   "ethermod.configuration.extra_crops": "Další plodiny",
   "ethermod.configuration.title": "Nastavení Manipulátoru éteru",
-  "subtitles.ethermod.stasis.ding": "Stáze tiká"
+  "subtitles.ethermod.stasis.ding": "Stáze tiká",
+  "command.ethermod.set": "Manipulátor éteru nastaven pro hráče: %s",
+  "command.ethermod.build_code": "Build hráče %s: %s",
+  "command.ethermod.bad_module": "Neznámý modul: %s",
+  "command.ethermod.bad_choice": "Volby jsou A nebo B, ne %s",
+  "command.ethermod.bad_code": "Neplatný kód buildu u: %s",
+  "command.ethermod.bad_colour": "Není hex barva: %s"
 }

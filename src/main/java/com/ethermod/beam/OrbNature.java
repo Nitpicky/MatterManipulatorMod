@@ -78,6 +78,7 @@ final class OrbNature {
             // fully grown plants are skipped before the claim probe (bone meal would do nothing)
             boolean growable =
                     bs.getBlock() instanceof net.minecraft.world.level.block.BonemealableBlock meal
+                            && !decorative(bs)
                             && meal.isValidBonemealTarget(sl, bp, bs);
             if (!growable && !bs.getFluidState().is(net.minecraft.tags.FluidTags.WATER)) continue;
             long key = bp.asLong();
@@ -177,6 +178,7 @@ final class OrbNature {
      * floor under water.
      */
     static boolean boneMeal(ServerLevel sl, BlockPos pos, int particles) {
+        if (decorative(sl.getBlockState(pos))) return false;
         ItemStack meal = new ItemStack(net.minecraft.world.item.Items.BONE_MEAL);
         if (net.minecraft.world.item.BoneMealItem.growCrop(meal, sl, pos)) {
             sl.levelEvent(1505, pos, particles);
@@ -189,6 +191,15 @@ final class OrbNature {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Grass, ferns and tall flowers: bone meal would only swap them for a taller copy (breaking
+     * the old one) or pop out more flowers, so Growth leaves them alone.
+     */
+    static boolean decorative(BlockState bs) {
+        return bs.getBlock() instanceof net.minecraft.world.level.block.TallGrassBlock
+                || bs.getBlock() instanceof net.minecraft.world.level.block.DoublePlantBlock;
     }
 
     /** Bone meal on the block hit: phase 3 covers 5x5. */

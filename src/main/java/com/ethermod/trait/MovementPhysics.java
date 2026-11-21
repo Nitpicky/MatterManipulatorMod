@@ -446,12 +446,8 @@ public final class MovementPhysics {
                             .add(up.scale(n * (water || lava ? drag : .98)));
         }
         p.setDeltaMovement(after);
-        if (below) {
-            if (!flying && p.fallDistance > 3)
-                p.causeFallDamage(p.fallDistance, 1, p.damageSources().fall());
-            p.resetFallDistance();
-        } else if (!flying && !water && !lava && actual.dot(up) < 0)
-            p.fallDistance -= (float) actual.dot(up);
+        // no fall damage while gravity is shifted: landing just ends the fall
+        if (below) p.resetFallDistance();
         p.calculateEntityAnimation(false);
         return true;
     }

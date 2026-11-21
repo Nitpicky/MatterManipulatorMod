@@ -19,7 +19,7 @@ import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 public final class ModNetwork {
 
-    private static final String VERSION = "19";
+    private static final String VERSION = "20";
 
     private ModNetwork() {}
 
